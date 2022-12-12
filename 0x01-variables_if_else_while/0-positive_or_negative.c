@@ -1,21 +1,22 @@
-#include <studlib.h>
+#include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+/* more headers goes there */
+
 /**
- * main -main block
- * Description: Get a random number and print the number
- * and if it is positive, negative, or zero
- * Return: 0
+ * main -Entry point
+ * Description: prints if random generated number is +tive, zero or -tive
+ * Return: Always 0 (success)
  */
 int main(void)
 {
 	int n;
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	if (n > 0)
-		printf("%1 is positive\n" , n);
-	else if (n < 0)
-		printf("%1 is negative\n" , n);
+	if (n < 0)
+		printf("%d is negative\n" , n);
+	else if (n == 0)
+		printf("%d is zero\n" , n);
 	else
-		printf("%1 is zero\n" , n);
+		printf("%d is positive\n" , n);
 	return (0);
